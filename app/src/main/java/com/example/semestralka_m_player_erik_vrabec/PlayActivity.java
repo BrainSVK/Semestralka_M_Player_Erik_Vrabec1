@@ -117,6 +117,10 @@ public class PlayActivity extends AppCompatActivity implements Prehraj{
         {
             activity.nastavPuasu(R.drawable.ic_play);
         }
+        else
+        {
+            activity.nastavPuasu(R.drawable.ic_pause);
+        }
         super.onBackPressed();
     }
 
