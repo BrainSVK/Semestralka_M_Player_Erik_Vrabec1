@@ -50,6 +50,10 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * MainActivita riadi celú aplikáciu, Tato aplikacia sluzi ako prehravac hudby
+ * @author Erik Vrabec
+ */
 public class MainActivity extends AppCompatActivity {
     private ListView listView;
     private static TextView textMenoPesnicky;
@@ -161,31 +165,55 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * int metoda getPozicia
+     * @return int vrati nam poziciu
+     */
     public int getPozicia()
     {
         return pozicia;
     }
 
+    /**
+     * void metoda getPozicia
+     * @param pozicia_ prepise poziciu
+     */
     public void setPozicia(int pozicia_)
     {
         pozicia = pozicia_;
     }
 
+    /**
+     * TextView metoda getTextMenoPesnicky
+     * @return TextView vrati nam textMenoPesnicky
+     */
     public TextView getTextMenoPesnicky()
     {
         return textMenoPesnicky;
     }
 
+    /**
+     * void metoda getPozicia
+     * @param nazovPesnicky_ prepise nam nazovPesnicky
+     */
     public void setNazovPesnicky(String nazovPesnicky_)
     {
         nazovPesnicky = nazovPesnicky_;
     }
 
+    /**
+     * MainActivity metoda getMain
+     * @return int vrati nam this
+     */
     public MainActivity getMain()
     {
         return this;
     }
 
+    /**
+     * void metoda spustaciePovolenie ziadam povolenie na precitane pesnicky cez metodu zobrazPesnicky
+     *
+     */
     public void spustaciePovolenie()
     {
         Dexter.withContext(this).withPermissions(Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.RECORD_AUDIO)
@@ -204,6 +232,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * ArrayList<File> metoda najdiSkladbu
+     * @return ArrayList<File> vrati nam arraylist so subormi v ,ktorych su vlozene pesnicky konciace na .mp3 a .wav
+     * @param file vkladame external subory z mobilu
+     */
     public ArrayList<File> najdiSkladbu(File file)  {
         ArrayList<File> arrayList = new ArrayList<>();
 
@@ -224,6 +257,11 @@ public class MainActivity extends AppCompatActivity {
         return arrayList;
     }
 
+    /**
+     * void metoda zobrazPesnicky
+     * nam ulozi vsetky pesnicky z arrayListu najdiSkladbu do atributu pesnicky[] vlozi do adaptera aby sa nam zobrazili v aplikacii nastavia sa kazdemi Listviewu vsetky potrebne parametre
+     * v skratke sluzi na spustenie medzi prechodom z MainActivity do PlayActivity
+     */
     void zobrazPesnicky()
     {
         mojePesnicky = najdiSkladbu(Environment.getExternalStorageDirectory());
@@ -252,11 +290,19 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * void metoda nastavPause
+     * @param i nam nastavi podla toho ake R.Drawable tam zadáme ja využivam bude play alebo pause
+     */
     public void nastavPuasu(int i)
     {
         zastav.setBackgroundResource(i);
     }
 
+    /**
+     * void metoda ukazNotofikaciu nam vytvori aktualnu notifikaciu s parametrami, ktore do nej vkladame
+     * @param i je ic_drawable a buď pause alebo play podla coho potrebujeme
+     */
     public void ukazNotifikaciu(int i)
     {
         Intent intent = new Intent(this, MainActivity.class);
@@ -285,6 +331,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Trieda Vlastny adapter slúzy na hromadne vytvorenie list_pesnicka layoutov do activity_main layoutu
+     * @author Erik Vrabec
+     */
     class vlastnyAdapter extends BaseAdapter
     {
         @Override

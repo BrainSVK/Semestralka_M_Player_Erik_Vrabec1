@@ -40,7 +40,8 @@ import com.gauravk.audiovisualizer.visualizer.BarVisualizer;
 import java.io.File;
 import java.util.ArrayList;
 
-/** Aktivita PlayActivity
+/** Aktivita PlayActivity ma funkciu mediaPlayer rovnako ako MainActivity lenze tu vyuziva layout jednej pesnicky kde ma viacej funkcii s danou pesnickou nez v MainActivite
+ * vyuziva sa tu aj seekBar, Animacie , vizualizer a celkovo tato trieda je skor spravena po dizajnovej stranke
  * @author Erik Vrabec
  */
 public class PlayActivity extends AppCompatActivity implements Prehraj{
@@ -352,6 +353,10 @@ public class PlayActivity extends AppCompatActivity implements Prehraj{
         }
     }
 
+    /**
+     * void metoda startAnimacie nam pusti animacie oka podla parametru rodacia
+     * @param rotacia ak 1 tak dorpedu ak inac tak dozadu
+     */
     public void startAnimacie(View view, int rotacia)
     {
         ObjectAnimator animator;
@@ -369,6 +374,11 @@ public class PlayActivity extends AppCompatActivity implements Prehraj{
         animatorSet.start();
     }
 
+    /**
+     * String metoda vytvorCas vytvori cas pesnicky
+     * @return String vytvori retazec casu napr. "2:54"
+     * @param dlzkaCas vladame cas v mili sekundach
+     */
     public String vytvorCas(int dlzkaCas)
     {
         String cas = "";
@@ -385,6 +395,9 @@ public class PlayActivity extends AppCompatActivity implements Prehraj{
         return cas;
     }
 
+    /**
+     * void metoda nastavPesnicku nastavuje seekBar a jeho zivotnyCyklus
+     */
     public void nastavPesnicku()
     {
         obnovenySeekBar = new Thread()
@@ -446,6 +459,10 @@ public class PlayActivity extends AppCompatActivity implements Prehraj{
         }, delay);
     }
 
+    /**
+     * void metoda ukazNotofikaciu nam vytvori aktualnu notifikaciu s parametrami, ktore do nej vkladame
+     * @param i je ic_drawable a buď pause alebo play podla coho potrebujeme
+     */
     public void ukazNotifikaciu(int i)
     {
         Intent intent = new Intent(this, PlayActivity.class);
@@ -474,60 +491,108 @@ public class PlayActivity extends AppCompatActivity implements Prehraj{
 
     }
 
+    /**
+     * String metoda startAnimacie nam pusti animacie oka podla parametru rodacia
+     * @return String
+     */
     public String getNazovPesnicky() {
         return nazovPesnicky;
     }
 
+    /**
+     * MediaPlayer metoda getMediaPlayer
+     * @return MediaPlayer vrati nam mediaPlayer
+     */
     public MediaPlayer getMediaPlayer()
     {
         return mediaPlayer;
     }
 
+    /**
+     * void metoda setMediaPlayer
+     * @param  mediaPlayer_ zadame na co chceme nastavit mediaPlayer
+     */
     public void setMediaPLayer(MediaPlayer mediaPlayer_)
     {
         mediaPlayer = mediaPlayer_;
     }
 
+    /**
+     * int metoda getPozicia
+     * @return int vrati nam poziciu
+     */
     public int getPozicia()
     {
         return pozicia;
     }
 
+    /**
+     * void metoda setPozicia
+     * @param pozicia_ nastavi nam poziciu
+     */
     public void setPozicia(int pozicia_)
     {
         pozicia = pozicia_;
     }
 
+    /**
+     * int metoda getPocetMojePesnicky
+     * @return int pocetPozicii
+     */
     public int getPocetMojePesnicy()
     {
         return pocetPozicii;
     }
 
+    /**
+     * String metoda getMenoPesnicky
+     * @return String vrati nam getMenoPesnicky
+     */
     public String getMenoPesnicky()
     {
         return txtMenoPesnicky.getText().toString();
     }
 
+    /**
+     * Context metoda getAppContext
+     * @return Context vrati nam context triedy/aktivity PlayActivity
+     */
     public Context getAppContext()
     {
         return PlayActivity.context;
     }
 
+    /**
+     * MainActivity metoda getActivity
+     * @return MainActivity vrati nam MainActivity
+     */
     public MainActivity getActivity()
     {
         return activity;
     }
 
+    /**
+     * int metoda getKontrola
+     * @return int vrati nam kontolu
+     */
     public int getKontrola()
     {
         return kontrola;
     }
 
+    /**
+     * void metoda setKontrola
+     * @param kontrola_ prepise nam kontkolu
+     */
     public void setKontrola(int kontrola_)
     {
         kontrola = kontrola_;
     }
 
+    /**
+     * PlayActivity metoda getPlayActivity
+     * @return PlayActivity vrati nam this cize PlayActivity
+     */
     public PlayActivity getPlayActivity()
     {
         return this;

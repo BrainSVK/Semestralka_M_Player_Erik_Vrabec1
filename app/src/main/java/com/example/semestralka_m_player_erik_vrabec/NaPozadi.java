@@ -20,8 +20,8 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
 
-/**
- *
+/** Trieda NaPozadi vyuzivam BroadcastReceiver a sluzi na notifikaciu aplikacie
+ * @author Erik Vrabec
  */
 public class NaPozadi extends BroadcastReceiver {
     private static final String DALSIA = "DALSIA";
