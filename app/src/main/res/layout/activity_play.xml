@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/pozadie2"
+    android:orientation="vertical"
+    android:weightSum="11"
+    tools:context=".PlayActivity"
+    android:screenOrientation="portrait">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        android:gravity="center|bottom"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/txtTw"
+            android:layout_margin="20dp"
+            android:layout_marginBottom="1dp"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:text="Meno Pesnicky"
+            android:textSize="22sp"
+            android:textAlignment="center"
+            android:textStyle="italic"
+            android:textColor="#FFF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:src="@drawable/play">
+        </ImageView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="20dp">
+            <SeekBar
+                android:id="@+id/seekBar"
+                android:layout_centerInParent="true"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="20dp"
+                android:layout_marginBottom="40dp"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content">
+            </SeekBar>
+
+            <TextView
+                android:id="@+id/txtStart"
+                android:layout_toLeftOf="@+id/seekBar"
+                android:layout_centerInParent="true"
+                android:layout_alignParentLeft="false"
+                android:layout_marginLeft="20dp"
+                android:text="0:10"
+                android:textColor="#FFF"
+                android:textSize="14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <TextView
+                android:id="@+id/txtStop"
+                android:layout_toRightOf="@+id/seekBar"
+                android:layout_centerInParent="true"
+                android:layout_alignParentRight="false"
+                android:layout_marginRight="20dp"
+                android:text="4:10"
+                android:textColor="#FFF"
+                android:textSize="14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </TextView>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.widget.Button
+                android:id="@+id/playTlacitko"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@drawable/ic_pause"
+                android:layout_centerHorizontal="true">
+            </android.widget.Button>
+
+            <android.widget.Button
+                android:id="@+id/dalsiaTlacitko"
+                android:layout_toRightOf="@+id/playTlacitko"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/ic_dalsi"
+                android:layout_width="50dp"
+                android:layout_height="50dp">
+            </android.widget.Button>
+
+            <android.widget.Button
+                android:id="@+id/predoslaTlacitko"
+                android:layout_toLeftOf="@+id/playTlacitko"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/ic_predosli"
+                android:layout_width="50dp"
+                android:layout_height="50dp">
+            </android.widget.Button>
+
+            <android.widget.Button
+                android:id="@+id/pretocDopreduTlacitko"
+                android:layout_toRightOf="@+id/dalsiaTlacitko"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/ic_pretoc_dopredu"
+                android:layout_width="40dp"
+                android:layout_height="40dp">
+            </android.widget.Button>
+
+            <android.widget.Button
+                android:id="@+id/pretocDozaduTlacitko"
+                android:layout_toLeftOf="@+id/predoslaTlacitko"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/ic_pretoc_dozadu"
+                android:layout_width="40dp"
+                android:layout_height="40dp">
+            </android.widget.Button>
+
+            <com.gauravk.audiovisualizer.visualizer.BarVisualizer xmlns:custom="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/blast"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_alignParentBottom="true"
+                custom:avColor="#FF362E"
+                custom:avDensity="0.5"
+                custom:avSpeed="normal"
+                custom:avType="outline"
+                custom:avWidth="4dp" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

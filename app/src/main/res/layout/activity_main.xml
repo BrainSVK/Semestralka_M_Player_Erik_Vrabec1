@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/pozadie"
+    tools:context=".MainActivity"
+    android:screenOrientation="portrait">
+
+    <ListView
+        android:id="@+id/listViewSong"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="10.0sp"
+        android:padding="8dp"
+        android:layout_width="match_parent"
+        android:layout_marginTop="60dp"
+        android:layout_height="match_parent">
+    </ListView>
+
+    <LinearLayout
+        android:layout_marginTop="2dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        android:id="@+id/rychlePrepinanie"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/list_pozadia">
+
+        <ImageView
+            android:id="@+id/imgPesnicky2"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/node"
+            android:layout_width="40dp"
+            android:layout_height="40dp">
+        </ImageView>
+
+        <TextView
+            android:id="@+id/txtMenoPesnicky2"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="5dp"
+            android:layout_toEndOf="@id/imgPesnicky"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:text="Meno Pesnicky"
+            android:textColor="#FFF"
+            android:textSize="15sp">
+        </TextView>
+
+        <android.widget.Button
+            android:id="@+id/predoslaTlacitko2"
+            android:layout_toRightOf="@+id/txtMenoPesnicky2"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/ic_predosli"
+            android:layout_width="50dp"
+            android:layout_height="50dp">
+        </android.widget.Button>
+
+        <android.widget.Button
+            android:id="@+id/playTlacitko2"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/predoslaTlacitko2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/ic_pause">
+        </android.widget.Button>
+
+        <android.widget.Button
+            android:id="@+id/dalsiaTlacitko2"
+            android:layout_toRightOf="@+id/playTlacitko2"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/ic_dalsi"
+            android:layout_width="50dp"
+            android:layout_height="50dp">
+        </android.widget.Button>
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>
